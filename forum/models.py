@@ -4,6 +4,7 @@ from django.db import models
 class User(models.Model):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=128)
+    name = models.CharField(max_length=255)
     joined_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -12,7 +13,6 @@ class User(models.Model):
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, default='')
     description = models.TextField(default='')
     avatar = models.URLField(max_length=255, default='')
     location = models.CharField(max_length=255, default='')
