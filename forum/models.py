@@ -51,6 +51,7 @@ class Topic(models.Model):
     class Meta:
         db_table = 'forum_topics'
         unique_together = ('forum', 'name')
+        indexes = [models.Index(fields=['participants_count'])]
 
 
 class TopicView(models.Model):

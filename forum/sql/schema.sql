@@ -56,6 +56,10 @@ ALTER TABLE "forum_posts" ADD COLUMN "topic_id" integer NOT NULL;
 --
 ALTER TABLE "forum_topics_views" ADD CONSTRAINT forum_topics_views_topic_id_user_id_13d8d338_uniq UNIQUE ("topic_id", "user_id");
 --
+-- Create index forum_topic_partici_3e9be8_idx on field(s) participants_count of model topic
+--
+CREATE INDEX "forum_topic_partici_3e9be8_idx" ON "forum_topics" ("participants_count");
+--
 -- Alter unique_together for topic (1 constraint(s))
 --
 ALTER TABLE "forum_topics" ADD CONSTRAINT forum_topics_forum_id_name_ece5cd78_uniq UNIQUE ("forum_id", "name");
