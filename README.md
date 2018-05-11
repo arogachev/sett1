@@ -4,7 +4,7 @@
 
 Queries can be found in the [forum/sql] folder.
 
-### Database schema
+### Generating database schema
 
 ```
 python manage.py migrate --fake forum zero
